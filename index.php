@@ -23,29 +23,21 @@
 // TODO Votre code ici bas.
 
 try {
-    $maConnexion = ........
+    $server = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $maConnexion = new PDO("mysql:host=$server;charset=utf8", $user, $pass);
 
-    $request = "
-        Ma super requête SQL pour créer une base de données.
-    ";
+    //Pour créer la base de données
+    $request = "CREATE DATABASE intro_sql";
+    
+    //Pour supprimer la base de données
+    // $request = "DROP DATABASE intro_sql";
 
-    $maConnexion->une super méthode pour exécuter ma requete
+    $maConnexion->exec($request);
 
-    echo "La base de données intro_sql a bien été créée.";
+    echo "La requête c'est bien déroulé.";
 }
 catch (PDOException $exception) {
     echo $exception->getMessage();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
